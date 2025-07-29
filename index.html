@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  style-src 'self' fonts.googleapis.com 'unsafe-inline';
+  font-src fonts.gstatic.com;
+  script-src 'self' 'unsafe-inline' https://www.gstatic.com;
+  frame-src https://www.google.com;
+  script-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.googleapis.com https://*.firebaseio.com;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  connect-src 'self' https://*.firebaseio.com wss://*.firebaseio.com;
+">
+  
+  <title>Fabiola Melo - Catálogo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo.jpg" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>FABIOLA MELO</h1>
+      <p>Transformando unhas em arte ✨</p>
+      <p style="text-align: center; margin-top: 20px;">
+        Visitas no site: <strong id="Visitas">Carregando...</strong>
+      </p>
+    </div>
+  </header>
+
+  <div class="container">
+    <section id="precos" class="fade-in">
+      <h2>Nossos Serviços</h2>
+      <div class="pricing-container">
+        <div class="pricing-card fade-in delay-1">
+          <div class="icon">👑</div>
+          <h3>Aplicação de unha de vidro</h3>
+          <div class="price">R$ 190,00</div>
+          <p class="description">aplicação de unhas de fibra de vidro é uma técnica popular para alongar e fortalecer as unhas, oferecendo um resultado natural e duradouro</p>
+        </div>
+        
+        <div class="pricing-card fade-in delay-2">
+          <div class="icon">🦶</div>
+          <h3>Pé em Gel<br><br></h3>
+          <div class="price">R$ 120,00</div>
+          <p class="description">Tratamento relaxante para os pés com hidratação e esmaltação</p>
+        </div>
+        
+        <div class="pricing-card fade-in delay-3">
+          <div class="icon">💅</div>
+          <h3>Manutenção do alongamento</h3>
+          <div class="price">R$ 155,00</div>
+          <p class="description">Unhas longas e resistentes com técnica profissional em gel</p>
+        </div>
+        
+        <div class="pricing-card fade-in delay-4">
+          <div class="icon">🎨</div>
+          <h3>esmaltação em Gel</h3>
+          <div class="price">R$ 85,00</div>
+          <p class="description">Cuidado completo para suas unhas das mãos com esmaltação perfeita</p>
+        </div>
+
+        <div class="pricing-card fade-in delay-5">
+          <div class="icon">🧴</div>
+          <h3>Banho de Gel<br></h3>
+          <div class="price">R$ 155,00</div>
+          <p class="description">Serve pra dar resistência e durabilidade pra unha, para aquelas clientes que optam por nao usarem um método de extensão (alongamento) mas querem preservar a unha natural.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="fade-in">
+      <h2>Galeria de Trabalhos</h2>
+      <div class="grid-galeria">
+        <div class="gallery-item">
+          <img src="assets/nail1.jpg" alt="Unhas decoradas 1">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/nail2.jpg" alt="Unhas decoradas 2">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/nail3.jpg" alt="Unhas decoradas 3">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/nail4.jpg" alt="Unhas decoradas 4">
+        </div>
+       <center>
+        <button class="btn btn-outline" onclick="abrirInstagram()">🌸 Instagram</button>
+       </center>
+      </div>
+    </section>
+
+    <section id="contato" class="fade-in">
+      <h2>Agende seu horário</h2>
+      <p>Entre em contato conosco e marque seu momento de beleza e cuidado</p>
+      <button class="btn whatsapp-btn" onclick="abrirWhatsApp()">💬 Falar no WhatsApp</button>
+    </section>
+
+    <section id="local" class="fade-in">
+      <h2>Nosso Espaço</h2>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.7875600028465!2d-49.26062798805465!3d-25.41192077747983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce5eb460132e1%3A0xc6baa3ed55655743!2sFab%C3%ADola%20Melo%20Nail%20Design!5e0!3m2!1spt-BR!2sbr!4v1752716156085!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+        <div class="botoes-direcao">
+          <button class="btn btn-outline" onclick="abrirGoogleMaps()">📍 Abrir no Google Maps</button>
+          <button class="btn btn-outline" onclick="abrirWaze()">🚗 Abrir no Waze</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Espaço da Beleza - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  
+  <!-- Firebase Configuration and Visit Counter -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+
+    // CONFIGURAÇÃO DO FIREBASE - USANDO REALTIME DATABASE
+    const firebaseConfig = {
+      apiKey: "AIzaSyBmFRGKsSK9vkID6fiLvGWCPuH-UPZLD9g",
+      authDomain: "visita-em-tempo-real.firebaseapp.com",
+      databaseURL: "https://visita-em-tempo-real-default-rtdb.firebaseio.com",
+      projectId: "visita-em-tempo-real",
+      storageBucket: "visita-em-tempo-real.firebasestorage.app",
+      messagingSenderId: "314640996523",
+      appId: "1:314640996523:web:296070e250bee4616effee",
+      measurementId: "G-NYSFS5TTYS"
+    };
+
+    // Inicializar Firebase
+    let app, db, countRef;
+    
+    try {
+      app = initializeApp(firebaseConfig);
+      db = getDatabase(app);
+      countRef = ref(db, 'visits/count');
+      
+      // Chamar a função para atualizar o contador de visitas quando a página carregar
+      updateVisitCount();
+    } catch (error) {
+      console.error("Erro ao inicializar Firebase:", error);
+      document.getElementById("Visitas").innerText = "Erro na configuração";
+    }
+
+    // Função para atualizar e exibir o contador de visitas
+    async function updateVisitCount() {
+      if (!db || !countRef) {
+        document.getElementById("Visitas").innerText = "Firebase não configurado";
+        return;
+      }
+
+      try {
+        // Incrementa a visita de forma segura usando transação
+        await runTransaction(countRef, (currentValue) => {
+          return (currentValue || 0) + 1;
+        });
+
+        // Escuta mudanças no contador em tempo real
+        onValue(countRef, (snapshot) => {
+          const visitas = snapshot.val() || 0;
+          const contadorEl = document.getElementById("Visitas");
+          if (contadorEl) {
+            contadorEl.innerText = visitas;
+          }
+        }, (error) => {
+          console.error("Erro ao ler contador:", error);
+          document.getElementById("Visitas").innerText = "Erro ao carregar";
+        });
+
+      } catch (error) {
+        console.error("Erro ao atualizar o contador de visitas:", error);
+        document.getElementById("Visitas").innerText = "Erro ao carregar";
+      }
+    }
+
+  </script>
+
+  <script type="module" src="scripts.js"></script>
+</body>
+</html>
