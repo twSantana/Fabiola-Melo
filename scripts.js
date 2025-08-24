@@ -25,11 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Função para abrir WhatsApp
 function abrirWhatsApp() {
-  const telefone = '5544999999999'; // Substitua pelo número real com código do país e DDD
+  const telefone = '5541991651904'; // Troque pelo número real com código do país e DDD
   const mensagem = 'Olá! Vi seu catálogo e gostaria de agendar um horário. ✨';
   const link = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
   window.open(link, '_blank');
 }
+
+
+
+
+
+function agendarHorario() {
+  
+
+
+
+
+
+
+
+
+
+
 
 function abrirInstagram() {
   window.open('https://www.instagram.com/fabiolafmelo/?hl=en', '_blank'); // Substitua pelo link do Instagram real
@@ -37,15 +54,15 @@ function abrirInstagram() {
 
 // Função para abrir Google Maps
 function abrirGoogleMaps() {
-  const endereco = 'Av. João Gualberto, 1881 - sala 1403 - Alto da Glória, Curitiba - PR, 80030-001'; // Substitua pelo endereço real
+  const endereco = 'Rua Santa Bertila Boscardin, 222 - Santa Felicidade'; // Substitua pelo endereço
   const link = `https://www.google.com/maps/search/${encodeURIComponent(endereco)}`;
   window.open(link, '_blank');
 }
 
 // Função para abrir Waze
 function abrirWaze() { 
-  const latitude = -25.411820723752843; // Substitua pela latitude real
-  const longitude = -49.258000450197386; // Substitua pela longitude real
+  const latitude = -25.401127182177312; // Substitua pela latitude real
+  const longitude = -49.32908172586066; // Substitua pela longitude real
   const link = `https://waze.com/ul?ll=${latitude},${longitude}&navigate=yes`;
   window.open(link, '_blank');
 }
