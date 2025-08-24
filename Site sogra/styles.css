@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4b3521 0%, #706a63 50%, #646062 100%);;
+  color: #4a4a4a;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #4b3521 0%, #646062 100%);
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: sparkle 20s linear infinite;
+}
+
+@keyframes sparkle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #fce7f3;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
+}
+
+/* Sections */
+section {
+  padding: 4rem 0;
+  margin: 2rem 0;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #6d5353;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #6d5353, #646062);
+  border-radius: 2px;
+}
+
+/* Tabela de Preços Melhorada */
+#precos {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(190, 24, 93, 0.1);
+  margin: 2rem 0;
+}
+
+.pricing-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #5c4e3f, #dbc7d0, #625d5e);
+  border-radius: 20px 20px 0 0;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(190, 24, 93, 0.2);
+  border-color: #ec4899;
+}
+
+.pricing-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #734e4e;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #734e4e;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .description {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.pricing-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Galeria */
+#galeria {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(190, 24, 93, 0.1);
+  margin: 2rem 0;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(236, 72, 153, 0.3), rgba(124, 58, 237, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(190, 24, 93, 0.3);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px hwb(330 28% 7% / 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid transparent;
+  color: #6c6161;
+}
+
+.btn-outline:hover {
+  background: #b3a4ab;
+  color: white;
+}
+
+/* Contato */
+#contato {
+  text-align: center;
+  background: linear-gradient(135deg, #f5f3f4 0%, #4b3a35 100%);
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 2rem 0;
+}
+
+#contato h2 {
+  color: rgb(56, 40, 40);
+}
+
+#contato h2::after {
+  background: white;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  margin-top: 2rem;
+}
+
+.whatsapp-btn:hover {
+  background: #1da851;
+}
+
+/* Local */
+#local {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(190, 24, 93, 0.1);
+  margin: 2rem 0;
+}
+
+.mapa {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.botoes-direcao {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: linear-gradient(135deg, #4b3521 0%, #646062 100%);
+  padding: 2rem;
+  color: white;
+  margin-top: 4rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .pricing-container {
+    grid-template-columns: 1fr;
+  }
+
+  .botoes-direcao {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Animações suaves */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
