@@ -12,12 +12,14 @@
   script-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.googleapis.com https://*.firebaseio.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   connect-src 'self' https://*.firebaseio.com wss://*.firebaseio.com;
+  inframe-src https://calendar.google.com;
 ">
   
   <title>Fabiola Melo - Catálogo</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="logo.jpg" type="image/x-icon">
+  <linkl rel="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet"></linkl>
 </head>
 <body>
   <header>
@@ -36,41 +38,68 @@
       <div class="pricing-container">
         <div class="pricing-card fade-in delay-1">
           <div class="icon">👑</div>
-          <h3>Aplicação de unha de vidro</h3>
-          <div class="price">R$ 190,00</div>
+          <h3>Aplicação em fibra de vidro</h3>
+          <div class="price">R$ 200,00</div>
           <p class="description">aplicação de unhas de fibra de vidro é uma técnica popular para alongar e fortalecer as unhas, oferecendo um resultado natural e duradouro</p>
         </div>
         
         <div class="pricing-card fade-in delay-2">
           <div class="icon">🦶</div>
           <h3>Pé em Gel<br><br></h3>
-          <div class="price">R$ 120,00</div>
+          <div class="price">R$ 140,00</div>
           <p class="description">Tratamento relaxante para os pés com hidratação e esmaltação</p>
         </div>
         
         <div class="pricing-card fade-in delay-3">
           <div class="icon">💅</div>
           <h3>Manutenção do alongamento</h3>
-          <div class="price">R$ 155,00</div>
+          <div class="price">R$ 160,00</div>
           <p class="description">Unhas longas e resistentes com técnica profissional em gel</p>
         </div>
         
         <div class="pricing-card fade-in delay-4">
           <div class="icon">🎨</div>
           <h3>esmaltação em Gel</h3>
-          <div class="price">R$ 85,00</div>
+          <div class="price">R$ 90,00</div>
           <p class="description">Cuidado completo para suas unhas das mãos com esmaltação perfeita</p>
         </div>
 
         <div class="pricing-card fade-in delay-5">
           <div class="icon">🧴</div>
           <h3>Banho de Gel<br></h3>
-          <div class="price">R$ 155,00</div>
+          <div class="price">R$ 160,00</div>
           <p class="description">Serve pra dar resistência e durabilidade pra unha, para aquelas clientes que optam por nao usarem um método de extensão (alongamento) mas querem preservar a unha natural.</p>
         </div>
       </div>
     </section>
 
+<div class="container">
+<section id="precos" class="fade-in">
+      <h2>Adicionais</h2>
+      <div class="pricing-container">
+        <div class="pricing-card fade-in delay-1">
+          <div class="icon">🩹</div>
+          <h3>Reposição de unha quebrada</h3>
+          <div class="price">R$ 19.00</div>
+          <p class="description">Para incidentes do cotidiano</p>
+        </div>
+        
+        <div class="pricing-card fade-in delay-2">
+          <div class="icon">📏</div>
+          <h3>Mudança de formato</h3>
+          <div class="price">R$ 450,00</div>
+          <p class="description">Inclui 4 sessões de manutenção de alongamento e 4 esmaltações em gel</p>
+        </div>
+        <div class="pricing-card fade-in delay-3">
+          <div class="icon">💨</div>
+          <h3>Reversa (par)</h3>
+          <div class="price">R$ 10,00</div>
+          <p class="description">Remoção segura e cuidadosa do alongamento de unhas</p>
+        </div>
+      </div>
+</section>"
+
+</div>
     <section id="galeria" class="fade-in">
       <h2>Galeria de Trabalhos</h2>
       <div class="grid-galeria">
@@ -95,13 +124,24 @@
     <section id="contato" class="fade-in">
       <h2>Agende seu horário</h2>
       <p>Entre em contato conosco e marque seu momento de beleza e cuidado</p>
+
+
+
+      <button class="calendar-btn" onclick="agendarHorario()">📅 Agendar Horário
+    </button>
+
+
+
+
+
+
       <button class="btn whatsapp-btn" onclick="abrirWhatsApp()">💬 Falar no WhatsApp</button>
     </section>
 
     <section id="local" class="fade-in">
       <h2>Nosso Espaço</h2>
       <div class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.7875600028465!2d-49.26062798805465!3d-25.41192077747983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce5eb460132e1%3A0xc6baa3ed55655743!2sFab%C3%ADola%20Melo%20Nail%20Design!5e0!3m2!1spt-BR!2sbr!4v1752716156085!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.104676637478!2d-49.331635188751044!3d-25.401306477486568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce1a61b619161%3A0x9d369ca75e258027!2sRua%20Santa%20Bertila%20Boscardin%2C%20222%20-%20Santa%20Felicidade%2C%20Curitiba%20-%20PR%2C%2082020-490!5e0!3m2!1sen!2sbr!4v1756043147835!5m2!1sen!2sbr%22" allowfullscreen="" loading="lazy"></iframe>
         <div class="botoes-direcao">
           <button class="btn btn-outline" onclick="abrirGoogleMaps()">📍 Abrir no Google Maps</button>
           <button class="btn btn-outline" onclick="abrirWaze()">🚗 Abrir no Waze</button>
@@ -180,6 +220,7 @@
     }
 
   </script>
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 
   <script type="module" src="scripts.js"></script>
 </body>
